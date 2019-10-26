@@ -6,21 +6,24 @@
           <h1>Hi, I'm Chris!</h1>
         </v-row>
         <v-row class='d-flex justify-center'>
-          <h3>Full Stack Developer | CSS Enthusiast | Material Designer</h3>
+          <p v-bind:class="[isMobile ? subtitle-2 : display-1]">Full Stack Developer | CSS Enthusiast | Material Designer</p>
         </v-row>
         <v-row class='d-flex justify-center'>
           <v-col class="text-center" :cols="[$vuetify.breakpoint.mdAndDown ? 2 : 1]"
           v-for="icon in icons"
           :key="icon">
-            <v-hover v-slot:default="{ hover }">
-              <v-icon
-              :href="icon.link"
-              :size="[$vuetify.breakpoint.mdAndDown ? 50 : 75]"
-              tag="a"
-              target="_blank"
-              style="text-decoration: none;"
-              :color="hover ? grey : blue">{{icon.icon}}</v-icon>
-            </v-hover>
+            <v-tooltip bottom>
+              <template v-slot:activator="{ on }">
+                <v-icon
+                :href="icon.link"
+                :size="[$vuetify.breakpoint.mdAndDown ? 50 : 75]"
+                tag="a"
+                target="_blank"
+                style="text-decoration: none;"
+                v-on="on">{{icon.icon}}</v-icon>
+              </template>
+              <span>{{icon.name}}</span>
+            </v-tooltip>
           </v-col>
         </v-row>
       </v-col>
@@ -34,25 +37,31 @@ export default {
     icons: [
     {
       icon: 'fab fa-github fa-5x',
-      link: 'https://github.com/ChristopherMCarlson'
+      link: 'https://github.com/ChristopherMCarlson',
+      name: 'Github'
     },
     {
       icon: 'fab fa-linkedin fa-5x',
-      link: 'https://www.linkedin.com/in/christopher-carlson-303953163/'
+      link: 'https://www.linkedin.com/in/christopher-carlson-303953163/',
+      name: 'LinkedIn'
     },
     {
       icon: 'fab fa-twitter fa-5x',
-      link: 'https://twitter.com/C_M_Carlson'
+      link: 'https://twitter.com/C_M_Carlson',
+      name: 'Twitter'
     },
     {
       icon: 'fas fa-folder fa-5x',
-      link: 'https://cmcinspire.herokuapp.com/#/main'
+      link: 'https://cmcinspire.herokuapp.com/#/main',
+      name: 'Portfolio'
     },
     {
       icon: 'fas fa-file fa-5x',
-      link: 'https://docs.google.com/document/d/19JO6IoMKg1Fyhq4Tli8sAsapy7Ds-EGa5JL3VC-NEFk/edit?usp=sharing'
+      link: 'https://docs.google.com/document/d/19JO6IoMKg1Fyhq4Tli8sAsapy7Ds-EGa5JL3VC-NEFk/edit?usp=sharing',
+      name: 'Resume'
     }
-    ]
+    ],
+    isMobile : this.$vuetify.breakpoint.mdAndDown
   }),
 };
 </script>
