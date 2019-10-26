@@ -6,7 +6,7 @@
           <h1>Hi, I'm Chris!</h1>
         </v-row>
         <v-row class='d-flex justify-center'>
-          <p v-bind:class="[isMobile ? subtitle-2 : display-1]">Full Stack Developer | CSS Enthusiast | Material Designer</p>
+          <p :class="[$vuetify.breakpoint.mdAndDown ? subtitle-2 : display-1]">Full Stack Developer | CSS Enthusiast | Material Designer</p>
         </v-row>
         <v-row class='d-flex justify-center'>
           <v-col class="text-center" :cols="[$vuetify.breakpoint.mdAndDown ? 2 : 1]"
@@ -35,33 +35,32 @@
 export default {
   data: () => ({
     icons: [
-    {
-      icon: 'fab fa-github fa-5x',
-      link: 'https://github.com/ChristopherMCarlson',
-      name: 'Github'
-    },
-    {
-      icon: 'fab fa-linkedin fa-5x',
-      link: 'https://www.linkedin.com/in/christopher-carlson-303953163/',
-      name: 'LinkedIn'
-    },
-    {
-      icon: 'fab fa-twitter fa-5x',
-      link: 'https://twitter.com/C_M_Carlson',
-      name: 'Twitter'
-    },
-    {
-      icon: 'fas fa-folder fa-5x',
-      link: 'https://cmcinspire.herokuapp.com/#/main',
-      name: 'Portfolio'
-    },
-    {
-      icon: 'fas fa-file fa-5x',
-      link: 'https://docs.google.com/document/d/19JO6IoMKg1Fyhq4Tli8sAsapy7Ds-EGa5JL3VC-NEFk/edit?usp=sharing',
-      name: 'Resume'
-    }
-    ],
-    isMobile : this.$vuetify.breakpoint.mdAndDown
-  }),
+      {
+        icon: 'fab fa-github fa-5x',
+        link: 'https://github.com/ChristopherMCarlson',
+        name: 'Github'
+      },
+      {
+        icon: 'fab fa-linkedin fa-5x',
+        link: 'https://www.linkedin.com/in/christopher-carlson-303953163/',
+        name: 'LinkedIn'
+      },
+      {
+        icon: 'fab fa-twitter fa-5x',
+        link: 'https://twitter.com/C_M_Carlson',
+        name: 'Twitter'
+      },
+      {
+        icon: 'fas fa-folder fa-5x',
+        link: 'https://cmcinspire.herokuapp.com/#/main',
+        name: 'Portfolio'
+      },
+      {
+        icon: 'fas fa-file fa-5x',
+        link: 'https://docs.google.com/document/d/19JO6IoMKg1Fyhq4Tli8sAsapy7Ds-EGa5JL3VC-NEFk/edit?usp=sharing',
+        name: 'Resume'
+      }
+    ]
+  })
 };
 </script>
