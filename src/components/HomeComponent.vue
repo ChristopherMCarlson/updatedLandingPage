@@ -9,13 +9,13 @@
           <h3>Full Stack Developer | CSS Enthusiast | Material Designer</h3>
         </v-row>
         <v-row class='d-flex justify-center'>
-          <v-col class="text-center" cols="1"
+          <v-col class="text-center" :cols="[$vuetify.breakpoint.mdAndDown ? 2 : 1]"
           v-for="icon in icons"
           :key="icon">
             <v-hover v-slot:default="{ hover }">
               <v-icon
               :href="icon.link"
-              size="100"
+              :size="[$vuetify.breakpoint.mdAndDown ? 50 : 75]"
               tag="a"
               target="_blank"
               style="text-decoration: none;"
