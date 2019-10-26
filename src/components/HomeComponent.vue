@@ -3,10 +3,10 @@
     <v-row style="height: 70vh" align="center">
       <v-col cols="12">
         <v-row class='d-flex justify-center'>
-          <h1>Hi, I'm Chris!</h1>
+          <p :class="[$vuetify.breakpoint.mdAndDown ? 'display-1' : 'display-4']">Hi, I'm Chris!</p>
         </v-row>
         <v-row class='d-flex justify-center'>
-          <p :class="[$vuetify.breakpoint.mdAndDown ? subtitle-2 : display-1]">Full Stack Developer | CSS Enthusiast | Material Designer</p>
+          <p :class="[$vuetify.breakpoint.mdAndDown ? 'caption' : 'display-1']">Full Stack Developer | CSS Enthusiast | Dad Joke Lover</p>
         </v-row>
         <v-row class='d-flex justify-center'>
           <v-col class="text-center" :cols="[$vuetify.breakpoint.mdAndDown ? 2 : 1]"
@@ -14,13 +14,16 @@
           :key="icon">
             <v-tooltip bottom>
               <template v-slot:activator="{ on }">
-                <v-icon
-                :href="icon.link"
-                :size="[$vuetify.breakpoint.mdAndDown ? 50 : 75]"
-                tag="a"
-                target="_blank"
-                style="text-decoration: none;"
-                v-on="on">{{icon.icon}}</v-icon>
+                <v-hover v-slot:default="{ hover }">
+                  <v-icon
+                  :href="icon.link"
+                  :size="[$vuetify.breakpoint.mdAndDown ? 50 : 75]"
+                  tag="a"
+                  target="_blank"
+                  style="text-decoration: none;"
+                  :color="hover ? 'blue' : 'grey'"
+                  v-on="on">{{icon.icon}}</v-icon>
+                </v-hover>
               </template>
               <span>{{icon.name}}</span>
             </v-tooltip>

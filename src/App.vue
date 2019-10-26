@@ -1,17 +1,12 @@
 <template>
   <v-app>
     <v-app-bar app>
-      <v-toolbar-title class="headline text-uppercase">
+      <v-toolbar-title class="text-uppercase" :class="[$vuetify.breakpoint.mdAndDown ? 'caption' : 'headline']">
         <span>CHRIS</span>
         <span class="font-weight-light">CARLSON</span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn
-        text
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Full Stack Developer</span>
+        <span  :class="[$vuetify.breakpoint.mdAndDown ? 'caption' : 'headline']" class="font-weight-medium">Full Stack Developer</span>
       </v-btn>
     </v-app-bar>
 
