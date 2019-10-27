@@ -40,6 +40,24 @@
                   style="text-decoration: none;"
                   :color="hover ? 'blue' : 'grey'"
                   v-on="on"
+                  @click.prevent="resumeDialog=true"
+                  >fas fa-file fa-5x</v-icon>
+                </v-hover>
+              </template>
+              <span>Resume</span>
+            </v-tooltip>
+          </v-col>
+          <v-col class="text-center" :cols="[$vuetify.breakpoint.mdAndDown ? 2 : 1]">
+            <v-tooltip bottom :disabled="$vuetify.breakpoint.mdAndDown">
+              <template v-slot:activator="{ on }">
+                <v-hover v-slot:default="{ hover }">
+                  <v-icon
+                  :size="[$vuetify.breakpoint.mdAndDown ? 50 : 75]"
+                  tag="a"
+                  target="_blank"
+                  style="text-decoration: none;"
+                  :color="hover ? 'blue' : 'grey'"
+                  v-on="on"
                   @click.prevent="dialog=true"
                   >fas fa-folder fa-5x</v-icon>
                 </v-hover>
@@ -50,6 +68,23 @@
         </v-row>
       </v-col>
     </v-row>
+    <v-dialog v-model="resumeDialog" fullscreen hide-overlay transition="dialog-bottom-transition">
+      <v-card>
+        <v-toolbar>
+          <v-btn icon dark @click="resumeDialog = false">
+            <v-icon color='grey'>mdi-close</v-icon>
+          </v-btn>
+          <v-toolbar-title>Resume</v-toolbar-title>
+          <v-spacer></v-spacer>
+          <v-toolbar-items>
+            <v-btn color="blue" text @click="resumeDialog = false">Download</v-btn>
+          </v-toolbar-items>
+        </v-toolbar>
+        <v-row class='mx-0'>
+          <Resume/>
+        </v-row>
+      </v-card>
+    </v-dialog>
     <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
       <v-card>
         <v-toolbar>
@@ -123,7 +158,12 @@
 </template>
 
 <script>
+import Resume from './Resume';
+
 export default {
+  components: {
+    Resume,
+  },
   data: () => ({
     icons: [
       {
@@ -140,14 +180,10 @@ export default {
         icon: 'fab fa-twitter fa-5x',
         link: 'https://twitter.com/C_M_Carlson',
         name: 'Twitter'
-      },
-      {
-        icon: 'fas fa-file fa-5x',
-        link: 'https://docs.google.com/document/d/19JO6IoMKg1Fyhq4Tli8sAsapy7Ds-EGa5JL3VC-NEFk/edit?usp=sharing',
-        name: 'Resume'
       }
     ],
     dialog: false,
+    resumeDialog: false,
     portfolio: [
     {
       name: 'Lendr',
@@ -162,7 +198,7 @@ export default {
       name: 'Insipre',
       desc: 'A landing page designed to help keep track of a to do list, serve the weather based on user input location, and display random pictures based on the Unsplash API, built using VueJS and Vuetify, server built using NodeJS',
       used: 'VueJS, Vuetify, NodeJS',
-      link: 'http://lendr-app.herokuapp.com/#/',
+      link: 'https://cmcinspire.herokuapp.com/#/',
       color: 'white',
       src: require('@/assets/inspireApp.png'),
       show: false
