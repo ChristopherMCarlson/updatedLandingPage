@@ -68,7 +68,7 @@
         </v-row>
       </v-col>
     </v-row>
-    <v-dialog v-model="resumeDialog" fullscreen hide-overlay transition="dialog-bottom-transition">
+    <v-dialog v-model="resumeDialog" fullscreen hide-overlay transition="dialog-bottom-transition" scrollable>
       <v-card>
         <v-toolbar>
           <v-btn icon dark @click="resumeDialog = false">
