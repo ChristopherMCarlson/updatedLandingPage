@@ -81,7 +81,7 @@
               <v-btn color="blue" text @click="resumeDialog = false">Download</v-btn>
             </v-toolbar-items>
           </v-toolbar>
-          <v-card-text class='mt-3 justify-center' :style="[$vuetify.breakpoint.mdAndDown ? 'padding: 0% 0% 0% 0%' : 'padding: 0% 25% 0% 25%']">
+          <v-card-text class='mt-3 justify-center resume-padding'>
             <p class="text-center display-1">Christopher Carlson</p>
             <hr/>
             <v-row>
@@ -303,3 +303,15 @@ export default {
   })
 };
 </script>
+
+<style>
+  .resume-padding{
+    padding: 0% 25% 0% 25% !important;
+  }
+
+  @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+      .resume-padding{
+      padding: 0% 5% 0% 5% !important;
+      }
+    }
+</style>
