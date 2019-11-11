@@ -81,7 +81,7 @@
               <v-btn color="blue" text @click="resumeDialog = false">Download</v-btn>
             </v-toolbar-items>
           </v-toolbar>
-          <v-card-text class='mt-3 justify-center' style="padding: 0% 25% 0% 25%">
+          <v-card-text class='mt-3 justify-center' :style="[$vuetify.breakpoint.mdAndDown ? 'padding: 0% 25% 0% 25%' : 'padding: 0% 0% 0% 0%']">
             <p class="text-center display-1">Christopher Carlson</p>
             <hr/>
             <v-row>
@@ -94,13 +94,27 @@
             </v-row>
             <p class="text-center headline">SOFTWARE ENGINEER</p>
             <p class="text-left body-1">A US Army veteran with experience in front and back-end software development technologies. Passionate about innovation, problem solving and building applications with an emphasis on client functionality. Recently completed an immersive coding program, challenged and grew in programming and scrum skills. A goal setter, natural born leader and possesses excellent collaboration and project coordinating abilities. Seeking an opportunity with a leading tech company focused on connecting users with creative breakthrough applications.</p>
+            <v-row class='d-flex justify-space-between'>
+              <p class="subtitle-1 font-weight-medium">Innovative Software Engineer</p>
+            </v-row>
             <v-list disabled>
               <v-list-item-content>
-                <v-list-item-title class='title'>Innovative Software Engineer</v-list-item-title>
                 <p class='body-1'>Offering experience in the full software development lifecycle- from concept through delivery of applications and customizable solutions.</p>
-                <v-list-item-title class='title'>Experienced in development methodologies,</v-list-item-title>
+              </v-list-item-content>
+            </v-list>
+            <v-row class='d-flex justify-space-between'>
+              <p class="subtitle-1 font-weight-medium">Experienced in development methodologies,</p>
+            </v-row>
+            <v-list disabled>
+              <v-list-item-content>
                 <p class='body-1'>tools and processes contributing to the design and rollout of software applications.</p>
-                <v-list-item-title class='title'>Known for excellent troubleshooting skills</v-list-item-title>
+              </v-list-item-content>
+            </v-list>
+            <v-row class='d-flex justify-space-between'>
+              <p class="subtitle-1 font-weight-medium">Known for excellent troubleshooting skills</p>
+            </v-row>
+            <v-list disabled>
+              <v-list-item-content>
                 <p class='body-1'>Able to analyze code and engineer well-researched responsive solutions.</p>
               </v-list-item-content>
             </v-list>
@@ -136,23 +150,33 @@
               </v-list-item-content>
             </v-list>
             <v-row class='d-flex justify-space-between'>
-              <p class="subtitle-1 font-weight-medium"></p>
-              <p class="subtitle-1 font-weight-medium"></p>
+              <p class="subtitle-1 font-weight-medium">Biller, Saia LTL Freight</p>
+              <p class="subtitle-1 font-weight-medium">04/2014-04/2018</p>
             </v-row>
             <v-list disabled>
               <v-list-item-content>
-                <p class='body-1'>&#8226; </p>
+                <p class='body-1'>&#8226; Maintained private billing information and verified customer accounts through security protocols and procedures.</p>
+                <p class='body-1'>&#8226; Identified errors in customer processing forms, and ensured accurate adjustments were applied to prevent freight delays.</p>
               </v-list-item-content>
             </v-list>
             <v-row class='d-flex justify-space-between'>
-              <p class="subtitle-1 font-weight-medium"></p>
-              <p class="subtitle-1 font-weight-medium"></p>
+              <p class="subtitle-1 font-weight-medium">Fire Support Specialist, US Army</p>
+              <p class="subtitle-1 font-weight-medium">07/2011-07/2014</p>
             </v-row>
             <v-list disabled>
               <v-list-item-content>
-                <p class='body-1'>&#8226; </p>
+                <p class='body-1'>&#8226; Received promotion and awarded Army Achievement Medal for excellent driving of a specialized vehicle.</p>
+                <p class='body-1'>&#8226; Honored Commendations: Army Service Ribbon, Global War on Terror Service Medal, National Defense Service.</p>
+                <p class='body-1'>&#8226; Managed transportation and communication efforts for armored vehicles and ensuring safe drivable conditions.</p>
+                <p class='body-1'>&#8226; Utilized understanding of advanced math to guarantee accuracy of quick calculations and prevent errors.</p>
               </v-list-item-content>
             </v-list>
+            <hr/>
+            <p class="text-center headline">EDUCATION</p>
+            <v-row class='d-flex justify-space-between'>
+                <p class="subtitle-1 font-weight-medium">Certificate of Completion, Boise Code Works</p>
+                <p class="subtitle-1 font-weight-medium">2018</p>
+              </v-row>
           </v-card-text>
         </v-card>
       </v-dialog>
