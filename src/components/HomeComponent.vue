@@ -81,7 +81,7 @@
               <v-btn color="blue" text @click="resumeDialog = false">Download</v-btn>
             </v-toolbar-items>
           </v-toolbar>
-          <v-card-text class='mt-3 justify-center' style="padding: 0% 25% 0% 25%">
+          <v-card-text class='mt-3 justify-center' :style="[$vuetify.breakpoint.mdAndDown ? 'padding: 0% 0% 0% 0%' : 'padding: 0% 25% 0% 25%']">
             <p class="text-center display-1">Christopher Carlson</p>
             <hr/>
             <v-row>
