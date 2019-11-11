@@ -68,23 +68,25 @@
         </v-row>
       </v-col>
     </v-row>
-    <v-dialog v-model="resumeDialog" fullscreen hide-overlay transition="dialog-bottom-transition" scrollable>
-      <v-card>
-        <v-toolbar>
-          <v-btn icon dark @click="resumeDialog = false">
-            <v-icon color='grey'>mdi-close</v-icon>
-          </v-btn>
-          <v-toolbar-title>Resume</v-toolbar-title>
-          <v-spacer></v-spacer>
-          <v-toolbar-items>
-            <v-btn color="blue" text @click="resumeDialog = false">Download</v-btn>
-          </v-toolbar-items>
-        </v-toolbar>
-        <v-row class='mx-0'>
-          <Resume/>
-        </v-row>
-      </v-card>
-    </v-dialog>
+    <v-row justify="center">
+      <v-dialog v-model="resumeDialog" fullscreen hide-overlay="true" transition="dialog-bottom-transition" scrollable="true">
+        <v-card>
+          <v-toolbar>
+            <v-btn icon dark @click="resumeDialog = false">
+              <v-icon color='grey'>mdi-close</v-icon>
+            </v-btn>
+            <v-toolbar-title>Resume</v-toolbar-title>
+            <v-spacer></v-spacer>
+            <v-toolbar-items>
+              <v-btn color="blue" text @click="resumeDialog = false">Download</v-btn>
+            </v-toolbar-items>
+          </v-toolbar>
+          <v-card-text>
+            
+          </v-card-text>
+        </v-card>
+      </v-dialog>
+    </v-row>
     <v-dialog v-model="dialog" fullscreen hide-overlay transition="dialog-bottom-transition">
       <v-card>
         <v-toolbar>
