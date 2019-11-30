@@ -206,9 +206,6 @@
                     <v-card-subtitle v-text="project.used"></v-card-subtitle>
                     <v-card-actions>
                         <v-btn text :href="project.link" target="_blank">View</v-btn>
-                        <v-btn color="purple" text>
-                          Explore
-                        </v-btn>
                       </v-card-actions>
                   </div>
                   <v-avatar
@@ -232,9 +229,11 @@
               {{project.used}}
             </v-card-subtitle>
             <v-card-actions>
-              <v-btn text :href="project.link" target="_blank">View</v-btn>
-              <v-btn color="purple" text>
-                Explore
+              <v-btn text :href="project.link" target="_blank">
+                View Preview
+              </v-btn>
+              <v-btn color="purple" text :href="project.code" target="_blank">
+                View Source
               </v-btn>
             </v-card-actions>
             <v-expand-transition>
@@ -286,6 +285,7 @@ export default {
       desc: 'An app designed to ease lending items to friends, built using VueJS and Vuetify, server built using NodeJS',
       used: 'VueJS, Vuetify, NodeJS',
       link: 'http://lendr-app.herokuapp.com/#/',
+      code: 'https://github.com/CaitlinBrooks/lendr',
       color: 'white',
       src: require('@/assets/lenderApp.png'),
       show: false
@@ -295,6 +295,7 @@ export default {
       desc: 'A landing page designed to help keep track of a to do list, serve the weather based on user input location, and display random pictures based on the Unsplash API, built using VueJS and Vuetify, server built using NodeJS',
       used: 'VueJS, Vuetify, NodeJS',
       link: 'https://cmcinspire.herokuapp.com/#/',
+      code: 'https://github.com/ChristopherMCarlson/vue-inspire',
       color: 'white',
       src: require('@/assets/inspireApp.png'),
       show: false
