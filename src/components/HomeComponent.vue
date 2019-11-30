@@ -78,7 +78,7 @@
             <v-toolbar-title>Resume</v-toolbar-title>
             <v-spacer></v-spacer>
             <v-toolbar-items>
-              <v-btn color="blue" text @click="resumeDialog = false">Download</v-btn>
+              <v-btn color="blue" text @click="resumeDialog = false" href='../assets/CMCarlsonResume.docx' download>Download</v-btn>
             </v-toolbar-items>
           </v-toolbar>
           <v-card-text class='mt-3 justify-center resume-padding'>
@@ -230,7 +230,7 @@
             </v-card-subtitle>
             <v-card-actions>
               <v-btn text :href="project.link" target="_blank">
-                View Preview
+                Live Site
               </v-btn>
               <v-btn color="purple" text :href="project.code" target="_blank">
                 View Source
@@ -260,6 +260,7 @@ export default {
     Resume,
   },
   data: () => ({
+    resume:'@/assets/CMCarlson Resume.docx',
     icons: [
       {
         icon: 'fab fa-github fa-5x',
