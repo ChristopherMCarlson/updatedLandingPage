@@ -121,7 +121,7 @@
             <hr/>
           <p class="text-center headline">PROFESSIONAL EXPERIENCE</p>
           <v-row class='d-flex justify-space-between'>
-            <p class="subtitle-1 font-weight-medium">Junior Software Engineer, Verified First</p>
+            <p class="subtitle-1 font-weight-medium">Software Engineer, Verified First</p>
             <p class="subtitle-1 font-weight-medium">11/2018-Present</p>
           </v-row>
           <v-list disabled>
@@ -300,7 +300,17 @@ export default {
       color: 'white',
       src: require('@/assets/inspireApp.png'),
       show: false
-    }
+    },
+    {
+      name: 'Vue Builder',
+      desc: 'A tech demo of a simple website builder',
+      used: 'VueJS, Vuetify, AWS Cognito',
+      link: 'http://vue-builder.christophermcarlson.com/#/',
+      code: 'https://github.com/ChristopherMCarlson/vue-do',
+      color: 'white',
+      src: require('@/assets/vueBuilderApp.png'),
+      show: false
+    },
     ]
   })
 };
